@@ -149,6 +149,7 @@
     gap:56px;
     align-items:center;
     position:relative;
+    z-index:1;
   }
   .hero-grid > div:first-child{flex:1.15 1 0;min-width:0;}
   .hero-grid > .gauge-wrap{flex:0.85 1 0;min-width:0;}
@@ -702,6 +703,117 @@
     .hero-grid > div:first-child,
     .hero-grid > .gauge-wrap{animation:none;}
   }
+
+  /* ---------- BOLD ANIMATIONS ---------- */
+  .hero-orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(2px);
+    z-index:0;
+  }
+  .hero-orb-1{
+    width:260px;height:260px;
+    top:-80px;right:6%;
+    background:radial-gradient(circle, rgba(95,211,221,0.35), transparent 70%);
+    animation:orb-float-1 9s ease-in-out infinite;
+  }
+  .hero-orb-2{
+    width:180px;height:180px;
+    bottom:-60px;left:4%;
+    background:radial-gradient(circle, rgba(224,138,60,0.28), transparent 70%);
+    animation:orb-float-2 11s ease-in-out infinite;
+  }
+  .hero-orb-3{
+    width:120px;height:120px;
+    top:40%;right:30%;
+    background:radial-gradient(circle, rgba(95,211,221,0.2), transparent 70%);
+    animation:orb-float-3 7.5s ease-in-out infinite;
+  }
+  @keyframes orb-float-1{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-30px,40px) scale(1.15);}
+  }
+  @keyframes orb-float-2{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(25px,-30px) scale(1.1);}
+  }
+  @keyframes orb-float-3{
+    0%,100%{transform:translate(0,0) scale(1);opacity:.7;}
+    50%{transform:translate(18px,22px) scale(1.25);opacity:1;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-orb{animation:none;}
+  }
+
+  .hero-grid > div:first-child{
+    animation:hero-bounce-in .8s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .hero-grid > .gauge-wrap{
+    animation:hero-bounce-in .8s cubic-bezier(.34,1.56,.64,1) .15s both;
+  }
+  @keyframes hero-bounce-in{
+    0%{opacity:0;transform:translateY(40px) scale(.92);}
+    60%{opacity:1;transform:translateY(-6px) scale(1.02);}
+    100%{opacity:1;transform:translateY(0) scale(1);}
+  }
+  .hero-ctas .btn-primary{
+    animation:btn-pulse-glow 2.6s ease-in-out 1s infinite;
+  }
+  @keyframes btn-pulse-glow{
+    0%,100%{box-shadow:0 0 0 0 rgba(95,211,221,0.45);}
+    50%{box-shadow:0 0 0 10px rgba(95,211,221,0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-ctas .btn-primary{animation:none;}
+  }
+
+  .gauge{
+    animation:gauge-breathe 4s ease-in-out infinite;
+  }
+  @keyframes gauge-breathe{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.04);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .gauge{animation:none;}
+  }
+
+  .story-card:hover{
+    transform:translateY(-10px) scale(1.02) !important;
+    box-shadow:0 22px 44px rgba(0,0,0,0.35) !important;
+  }
+  .panel-card:hover{
+    transform:translateY(-6px) scale(1.015) !important;
+  }
+  .seal:hover{
+    transform:translateY(-9px) scale(1.03) !important;
+  }
+  .seal:hover .seal-ring{
+    transform:rotate(25deg) scale(1.15) !important;
+  }
+
+  .btn-primary:hover,
+  .btn-ghost:hover{
+    animation:btn-bounce .4s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes btn-bounce{
+    0%{transform:scale(1);}
+    40%{transform:scale(1.08);}
+    100%{transform:scale(1.03);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn-primary:hover,.btn-ghost:hover{animation:none;}
+  }
+
+  .brand:hover .brand-mark{
+    animation:logo-spin-bounce .6s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes logo-spin-bounce{
+    0%{transform:rotate(0) scale(1);}
+    50%{transform:rotate(20deg) scale(1.2);}
+    100%{transform:rotate(8deg) scale(1.08);}
+  }
 </style>
 </head>
 <body>
@@ -726,6 +838,9 @@
 </nav>
 
 <header class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">HVAC · Refrigeration · Electrical</div>
