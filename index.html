@@ -1046,10 +1046,6 @@
           <div><div class="label mono">Phone</div><a class="value" href="tel:+27844537639">084 453 7639</a></div>
         </div>
         <div class="contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-          <div><div class="label mono">Email</div><a class="value mailto-fallback" href="mailto:info@capecoolsolutions.co.za">info@capecoolsolutions.co.za</a></div>
-        </div>
-        <div class="contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <div><div class="label mono">Coverage</div><div class="value">Cape Town, Western Cape</div></div>
         </div>
@@ -1058,14 +1054,6 @@
         <a class="btn btn-primary" href="tel:084 453 7639">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.34 1.97.63 2.92a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.16-1.16a2 2 0 0 1 2.11-.45c.95.29 1.93.5 2.92.63A2 2 0 0 1 22 16.92z"/></svg>
           Call Now
-        </a>
-         <a class="btn btn-ghost" href="https://wa.me/+27 84 453 7639" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          WhatsApp Us
-        </a>
-        <a class="btn btn-ghost mailto-fallback" href="mailto:info@capecoolsolutions.co.za">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-          Email Us
         </a>
       </div>
     </div>
@@ -1102,28 +1090,6 @@
   } else {
     reveals.forEach(function(el){ el.classList.add('is-visible'); });
   }
-
-  // Email button fallback: if no desktop mail app picks up the mailto link,
-  // open Gmail's web compose window instead so the message still gets sent.
-  var mailLinks = document.querySelectorAll('.mailto-fallback');
-  mailLinks.forEach(function(link){
-    link.addEventListener('click', function(e){
-      var to = 'info@capecoolsolutions.co.za';
-      var subject = encodeURIComponent('Enquiry from website');
-      var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + subject;
-      var didBlur = false;
-
-      function onBlur(){ didBlur = true; }
-      window.addEventListener('blur', onBlur);
-
-      setTimeout(function(){
-        window.removeEventListener('blur', onBlur);
-        if(!didBlur){
-          window.open(gmailUrl, '_blank', 'noopener');
-        }
-      }, 600);
-    });
-  });
 })();
 </script>
 
