@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdul7862626a-bit.github.io/J-Refrigerations-Appliance-Repairs/sitemap.xml
+Sitemap: https://abdul7862626a-bit.github.io/Cape-Cool-Solutions/sitemap.xml
